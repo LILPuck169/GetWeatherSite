@@ -1,0 +1,173 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-image: url(../static/img/bkg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: #87cefa; */
+}
+.box {
+  display: grid;
+  min-height: 100vh;
+}
+.container {
+  max-width: 400px;
+  margin: auto;
+  padding: 100px;
+  border: 5px solid #1e90ff;
+  border-radius: 20px;
+  /* background-color: #00bfff; */
+
+  background-color: #e0ffff;
+  /* background-image: url(../static/img/bcgRain.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.weather {
+  color: #00008b;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.choose__city {
+  color: #00008b;
+  font-size: 20px;
+}
+.select {
+  /* Cброс браузерных стилей select */
+  /* appearance: none; */
+  border: none;
+  background: transparent;
+  outline: none;
+  /* Конец сброса стилей браузера */
+  /* Добавление своего стиля */
+  border: 2px solid #00008b;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  color: #00008b;
+  /* font-weight: 600; */
+  font-size: 15px;
+  margin-top: 10px;
+  width: 100%;
+}
+.select__footer {
+  /* Cброс браузерных стилей select */
+  /* appearance: none; */
+  border: none;
+  background: transparent;
+  outline: none;
+  /* Конец сброса стилей браузера */
+  /* Добавление своего стиля */
+  border: 2px solid #00008b;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  color: #00008b;
+  /* font-weight: 600; */
+  font-size: 15px;
+  margin-top: 10px;
+  width: 100%;
+}
+.choose__params {
+  color: #00008b;
+  font-size: 20px;
+}
+.label__maring {
+  display: inline-block;
+  margin-top: 15px;
+  color: #00008b;
+  font-size: 20px;
+}
+
+.section__form-group {
+  /* max-width: 100%; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.baseline {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+.unitsOfMeasurement {
+  margin-top: 15px;
+  color: #00008b;
+  font-size: 20px;
+}
+/* a {
+  display: block;
+  margin-top: 15px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+} */
+
+/* Вторая часть */
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00008b;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.weather_image {
+  max-width: 60px;
+  vertical-align: middle;
+}
+
+.container__weather {
+  max-width: 600px;
+  margin: auto;
+  padding: 100px;
+  border: 5px solid #1e90ff;
+  border-radius: 20px;
+  background-color: #e0ffff;
+}
+.weather-info {
+  /* display: flex;
+  flex-direction: column; */
+  margin-bottom: 15px;
+}
+.weather__title {
+  /* display: block; */
+  margin-top: 15px;
+  margin-bottom: 25px;
+  color: #00008b;
+  font-size: 20px;
+}
+.button__text {
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+.seaction__temperature {
+  display: flex;
+  gap: 10px;
+}
+.general__parameters {
+  max-width: 50px;
+  vertical-align: middle;
+}
+.error__align {
+  text-align: center;
+}

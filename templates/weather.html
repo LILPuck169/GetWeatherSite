@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Погода</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='reset.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <div class="container__weather">
+        <h1 class="weather__title">Погода в городе {{ weather_data.city }}</h1>
+        <div class="weather-info">
+          {% if 'temperature' in weather_data %}
+          <div class="seaction__temperature">
+            <img
+              class="general__parameters"
+              src="../static/img/weather/термометр.svg"
+              alt="Температура"
+            />
+            <p class="weather__title">
+              Температура: {{ weather_data.temperature }}°C
+            </p>
+          </div>
+          {% endif %}
+          {% if 'wind_speed' in weather_data %}
+          <div class="seaction__temperature">
+            <img
+              class="general__parameters"
+              src="../static/img/weather/ветер.svg"
+              alt="Температура"
+            />
+            <p class="weather__title">
+              Скорость ветра: {{ weather_data.wind_speed }} м/с
+            </p>
+          </div>
+          {% endif %}
+          {% if 'feels_like' in weather_data %}
+          <div class="seaction__temperature">
+            <img
+              class="general__parameters"
+              src="../static/img/weather/ветрянка.svg"
+              alt="Ощущается как"
+            />
+            <p class="weather__title">
+              Ощущается как: {{ weather_data.feels_like }}°
+            </p>
+          </div>
+          {% endif %}
+          {% if 'wind_direction' in weather_data %}
+          <div class="seaction__temperature">
+            <img
+              class="general__parameters"
+              src="../static/img/weather/ветрянка.svg"
+              alt="Температура"
+            />
+            <p class="weather__title">
+              Направление ветра: {{ weather_data.wind_direction }}°
+            </p>
+          </div>
+          {% endif %}
+          {% if 'humidity' in weather_data %}
+          <div class="seaction__temperature">
+            <img
+              class="general__parameters"
+              src="../static/img/weather/капля.svg"
+              alt="Температура"
+            />
+            <p class="weather__title">
+              Влажность: {{ weather_data.humidity }}%
+            </p>
+          </div>
+          {% endif %}
+          {% if 'pressure' in weather_data %}
+          <div class="seaction__temperature">
+            <img
+              class="general__parameters"
+              src="../static/img/weather/давление.png"
+              alt="Температура"
+            />
+            <p class="weather__title">
+              Давление: {{ weather_data.pressure }}мм рт. ст.
+            </p>
+          </div>
+          {% endif %}
+          {% if 'weather_main' in weather_data %}
+          <div class="seaction__temperature">
+            <p class="weather__title">
+              Облачность: {{ weather_data.weather_main }}
+            </p>
+            {% if weather_data.weather_main == 'Облачно' %}
+            <img
+              class="weather_image"
+              src="{{ url_for('static', filename='img/clouds.png') }}"
+              alt=""
+            />
+            {% endif %} {% if weather_data.weather_main == 'Снег' %}
+            <img
+              class="weather_image"
+              src="{{ url_for('static', filename='img/snow.png') }}"
+              alt=""
+            />
+            {% endif %} {% if weather_data.weather_main == 'Дождь' %}
+            <img
+              class="weather_image"
+              src="{{ url_for('static', filename='img/rain.png') }}"
+              alt=""
+            />
+            {% endif %} {% if weather_data.weather_main == 'Солнечно' %}
+            <img
+              class="weather_image"
+              src="{{ url_for('static', filename='img/sunny.png') }}"
+              alt=""
+            />
+            {% endif %} {% if weather_data.weather_main == 'Ясно' %}
+            <img
+              class="weather_image"
+              src="{{ url_for('static', filename='img/clear.png') }}"
+              alt=""
+            />
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+
+        <button><a class="button__text" href="/">Назад</a></button>
+      </div>
+    </div>
+  </body>
+</html>

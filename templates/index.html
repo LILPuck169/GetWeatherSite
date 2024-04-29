@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Погода</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='reset.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <div class="container">
+        <h1 class="weather">Погода</h1>
+
+        <form action="/weather" method="post">
+          <!-- Выборка города! -->
+          <div class="form-group">
+            <label class="choose__city" for="city">Выберите город:</label>
+            <select class="select" id="city" name="city" required>
+              {% for city in cities %}
+              <option class="options" value="{{ city }}">{{ city }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <!-- Выборка Параметров! -->
+          <p class="choose__params">Выберите параметры:</p>
+          <div class="section__form-group">
+            <!-- <br /> -->
+            <!-- Температура! -->
+            <div class="section__temperature baseline">
+              <input
+                class="checkbox__input"
+                type="checkbox"
+                id="temperature"
+                name="params"
+                value="temperature"
+              />
+              <label class="label__maring" for="temperature">Температура</label>
+            </div>
+            <!-- <br /> -->
+            <!-- Скорость ветра! -->
+            <div class="wind__speed baseline">
+              <input
+                class="checkbox__input"
+                type="checkbox"
+                id="wind_speed"
+                name="params"
+                value="wind_speed"
+              />
+              <label class="label__maring" for="wind_speed"
+                >Скорость ветра</label
+              >
+            </div>
+            <div class="section__temperature baseline">
+              <input
+                class="checkbox__input"
+                type="checkbox"
+                id="feels_like"
+                name="params"
+                value="feels_like"
+              />
+              <label class="label__maring" for="feels_like">Ощущается как</label>
+            </div>
+            <!-- <br /> -->
+            <!-- Направление ветра! -->
+            <div class="wind__derection baseline">
+              <input
+                class="checkbox__input"
+                type="checkbox"
+                id="wind_direction"
+                name="params"
+                value="wind_direction"
+              />
+              <label class="label__maring" for="wind_direction"
+                >Направление ветра</label
+              >
+            </div>
+            <!-- <br /> -->
+            <!-- Влажность! -->
+            <div class="humidity baseline">
+              <input
+                class="checkbox__input"
+                type="checkbox"
+                id="humidity"
+                name="params"
+                value="humidity"
+              />
+              <label class="label__maring" for="humidity">Влажность</label>
+            </div>
+            <!-- <br /> -->
+            <!-- Давление! -->
+            <div class="pressure baseline">
+              <input
+                class="checkbox__input"
+                type="checkbox"
+                id="pressure"
+                name="params"
+                value="pressure"
+              />
+              <label class="label__maring" for="pressure">Давление</label>
+            </div>
+            <!-- <br /> -->
+            <!-- Облачность -->
+            <div class="cloudy baseline">
+              <input
+                class="checkbox__input"
+                type="checkbox"
+                id="cloudy"
+                name="params"
+                value="cloudy"
+              />
+              <label class="label__maring" for="cloudy">Облачность</label>
+            </div>
+            <!-- <br /> -->
+          </div>
+          <!-- Единицы измерения -->
+          <div class="form-group">
+            <p class="unitsOfMeasurement">Выберите единицы измерения:</p>
+
+            <select class="select__footer" id="units" name="units">
+              <option value="metric">Метрическая</option>
+              <option value="imperial">Имперская</option>
+            </select>
+          </div>
+          <!-- Кнопка -->
+          <button type="submit">Получить погоду</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src=""></script>
+</html>
